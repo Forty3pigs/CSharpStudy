@@ -2,9 +2,9 @@
 // Отрезок не нужен. Эту точку соединяем с людой из 3х и снова точку посредине.
 // Новую точку соединяем снова с любой из вершин начального треугольника.
 
-//Console.Clear();
+Console.Clear();
 Console.WriteLine("Задача про точки и треугольники");
-
+Console.WriteLine(" ");
 //Console.SetCursorPosition(10,2);
 //Console.WriteLine("+");
 
@@ -44,3 +44,4 @@ while (count < 10000)
     Console.WriteLine("+");
     count++;
 }
+Console.SetCursorPosition(1,21);
