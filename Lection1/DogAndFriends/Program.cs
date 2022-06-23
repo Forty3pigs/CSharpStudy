@@ -7,18 +7,18 @@
 
 Console.Clear();
 Console.Write("Введите расстояние между друзьями: ");
-int? distance = Convert.ToInt32(Console.ReadLine());
+var distance = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость первого: ");
-int? firstFriendSpeed = Convert.ToInt32(Console.ReadLine());
+var firstFriendSpeed = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость второго: ");
-int? secondFriendSpeed = Convert.ToInt32(Console.ReadLine());
+var secondFriendSpeed = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость собаки: ");
-int? dogSpeed = Convert.ToInt32(Console.ReadLine());
+var dogSpeed = Convert.ToInt32(Console.ReadLine());
 
 int distanceLimit = 10;
 bool dogDirection = true;
 int dogCounter = 0;
-int? timeToMeet = 0;
+var timeToMeet = 0;
 
 while (distance > distanceLimit)
 {
