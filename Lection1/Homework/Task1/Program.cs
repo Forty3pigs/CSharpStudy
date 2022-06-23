@@ -15,18 +15,21 @@ while (true)
             {
                 Console.WriteLine(" ");
                 Console.WriteLine(first + " is equal " + second);
+                Console.WriteLine(" ");
                 break;
             }
-            else if (first > second)
+            if (first > second)
             {
                 Console.WriteLine(" ");
                 Console.WriteLine(first + " is greater than " + second);
+                Console.WriteLine(" ");
                 break;
             }
             else
             {
                 Console.WriteLine(" ");
                 Console.WriteLine(second + " is greater than " + first);
+                Console.WriteLine(" ");
                 break;
             }
         }
@@ -34,9 +37,10 @@ while (true)
         {
             Console.WriteLine("is not a number. ");
         }
+
     }
     else
     {
-        Console.WriteLine(" is not number. ");
+        Console.WriteLine("is not number. ");
     }
 }
