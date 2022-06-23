@@ -24,7 +24,7 @@ while (distance > distanceLimit)
 {
     if (dogDirection == true)
     {
-        timeToMeet = distance / (firstFriendSpeed+dogSpeed);
+        timeToMeet = distance / (firstFriendSpeed + dogSpeed);
         dogDirection = false;
     }
     else
@@ -32,9 +32,9 @@ while (distance > distanceLimit)
         timeToMeet = distance / (secondFriendSpeed + dogSpeed);
         dogDirection = true;
     }
-    distance = distance - timeToMeet * (firstFriendSpeed+secondFriendSpeed);
+    distance = distance - timeToMeet * (firstFriendSpeed + secondFriendSpeed);
     dogCounter++;
     Console.WriteLine(distance);
 }
 
-Console.WriteLine(dogCounter);
+Console.WriteLine("Собака пробежала " + dogCounter + " раз(а)");
