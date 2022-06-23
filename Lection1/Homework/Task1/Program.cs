@@ -40,28 +40,3 @@ while (true)
         Console.WriteLine(" is not number. ");
     }
 }
-
-
-// int first = Convert.ToInt32(Console.ReadLine());
-// Console.Write("Enter second number: ");
-// int second = Convert.ToInt32(Console.ReadLine());
-// if (first > second)
-// {
-//     Console.WriteLine(first + " is greater than " + second);
-// }
-// else
-// {
-//     Console.WriteLine(second + " is greater than " + first);
-// }
-
-// while (true)
-// {
-//     Console.Write("Введите число: ");
-//    string text = Console.ReadLine();
-//    if (int.TryParse(text, out int number))
-//     {
-//         Console.WriteLine("Вы ввели число {0}", number);
-//         break;
-//     }
-//     Console.WriteLine("Не удалось распознать число, попробуйте еще раз.");
-// }
