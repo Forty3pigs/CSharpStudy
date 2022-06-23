@@ -6,14 +6,14 @@
 // Расстояние встречи принимаем за 10м
 
 Console.Clear();
-Console.Write("Введите расстояние между друзьями: ");
-var distance = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость первого: ");
 var firstFriendSpeed = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость второго: ");
 var secondFriendSpeed = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите скорость собаки: ");
 var dogSpeed = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите расстояние между друзьями: ");
+var distance = Convert.ToInt32(Console.ReadLine());
 
 int distanceLimit = 10;
 bool dogDirection = true;
