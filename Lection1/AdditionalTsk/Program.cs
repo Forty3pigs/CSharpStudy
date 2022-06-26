@@ -14,16 +14,3 @@ catch
 {
     Console.WriteLine("Huston, we have a trouble");
 }
-// if (string.TryParse(text, out int str))
-// string value = Convert.ToString(Console.ReadLine());
-// }
-
-
-// catch (OutOfMemoryException)
-// {
-//     Console.WriteLine("Huston, we have a trouble");
-// }
-// catch (ArgumentOutOfRangeException)
-// {
-//     Console.WriteLine("Huston, we have a trouble");
-// }
