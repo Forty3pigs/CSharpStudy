@@ -5,7 +5,7 @@
 //   ТелоМетода;
 //   return ЗначениеСоответствующееВозвращаемомуТипуДанных;
 // }
-string GetHour(int Hour, )
+string GetHour(int Hour, int quantity, string ending)
 
 string localHour = DateTime.Now.ToString("HH");
 string localMinute = DateTime.Now.ToString("mm");
