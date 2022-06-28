@@ -1,4 +1,23 @@
 
+# Program blank
+```
+
+namespace Geekbrains
+{
+    class Homework
+    {
+        static void Main(string[] args)
+        {
+            
+           
+        }
+    }
+
+}
+
+
+```
+
 ### Методы
 ```
 // ВозвращаемыйТипДанных ИмяМетода([ТипДанных1 ИмяАргумента1, ...])
