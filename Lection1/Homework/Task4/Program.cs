@@ -4,12 +4,12 @@
 Console.WriteLine("All non numeric simbols will be equal to 0 ");
 Console.Write("Enter your number: ");
 int.TryParse(Console.ReadLine(), out int numberN);
-int i = 0;
+int i = 2;
 if (numberN > 0)
 {
     while (i < numberN)
     {
-        Console.Write($"{i} ");
+        Console.Write($"{i}, ");
         i = i + 2;
     }
 }
