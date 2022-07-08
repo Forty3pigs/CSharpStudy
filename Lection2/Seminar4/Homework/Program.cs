@@ -83,11 +83,12 @@ namespace Geekbrains
         public int[] CreateArray(int size)
         {
             int[] array = new int[size];
-
+            int start = -999;
+            int end = 1000;
             Console.WriteLine("\nArray generated: ");
             for (int i = 0; i < size; i++)
             {
-                array[i] = new Random().Next(-999, 1000);
+                array[i] = new Random().Next(start, end);
 
                 Console.Write($"{array[i]} ");
             }
@@ -97,11 +98,13 @@ namespace Geekbrains
         public double[] CreateArray(int size, bool d)
         {
             double[] array = new double[size];
+            int start = -999;
+            int end = 1000;
             Random rand = new Random();
             Console.WriteLine("\nArray generated: ");
             for (int i = 0; i < size; i++)
             {
-                array[i] = rand.Next(-999, 999) + rand.NextDouble();
+                array[i] = rand.Next(start, end) + rand.NextDouble();
 
                 Console.Write($"\n{array[i]} ");
             }
