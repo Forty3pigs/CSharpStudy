@@ -6,7 +6,7 @@ namespace Geekbrains
         {
             int size = Arrays.AskSize();
             Console.Write("Enter digit capacity: ");
-            int digitCapacity = Convert.ToInt32(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out int digitCapacity);
             int[] array = new Arrays().CreateArray(size, digitCapacity);
             EvenCount(array);
 

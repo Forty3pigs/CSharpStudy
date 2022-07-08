@@ -1,23 +1,4 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-
-// [345, 897, 568, 234] -> 2
-
-// Задача 36: Задайте одномерный массив, заполненный случайными числами.
-// Найдите сумму элементов, стоящих на нечётных позициях.
-
-// [3, 7, 23, 12] -> 19
-
-// [-4, -6, 89, 6] -> 0
-
-// Задача 38: Задайте массив вещественных чисел.
-// Найдите разницу между максимальным и минимальным элементов массива.
-
-// [3 7 22 2 78] -> 76
-
-//using Task34;
-
-namespace Geekbrains
+﻿namespace Geekbrains
 {
     static public class Homework
     {
@@ -61,9 +42,9 @@ namespace Geekbrains
     {
         public static int AskSize()
         {
-            Console.Clear();
-            Console.Write("Enter size of array: ");
-            int size = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nEnter size of array: ");
+            int.TryParse(Console.ReadLine(), out int size);
+            //int size = Convert.ToInt32(Console.ReadLine());
             return size;
         }
         public int[] CreateArray(int size, int digitQuantity)
@@ -90,13 +71,13 @@ namespace Geekbrains
             for (int i = 0; i < size; i++)
             {
                 array[i] = new Random().Next(start, end);
-                // Нужно исключить значения (-100; 100)
                 Console.Write($"{array[i]} ");
             }
             Console.WriteLine("");
             return array;
         }
         public double[] CreateArray(int size, bool d)
+        // bool d - заглушка. Пожно прикрутить отрезание десятичных знаков до некоторого значения
         {
             double[] array = new double[size];
             int start = -999;
