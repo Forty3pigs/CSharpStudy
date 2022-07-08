@@ -4,12 +4,13 @@
 
 namespace Geekbrains
 {
-    class Homework
+    static public class Homework
     {
-        static void Main(string[] args)
+        static public void Main(string[] args)
         {
-            
-           
+                Console.WriteLine("All non numerics will be ignored ");
+                Console.Write("Enter first number: ");
+                int.TryParse(Console.ReadLine(), out int first);
         }
     }
 
