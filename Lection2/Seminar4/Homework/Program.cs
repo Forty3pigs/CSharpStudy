@@ -23,6 +23,7 @@ namespace Geekbrains
     {
         static public void Main(string[] args)
         {
+            Console.Clear();
             ConsoleKeyInfo choise;
             Console.WriteLine("Press:   1 for start task1 \n \t 2 for start task2 \n \t 3 for start task3 \nOr any other key for quit");
             choise = Console.ReadKey();
@@ -30,28 +31,28 @@ namespace Geekbrains
             {
                 Console.WriteLine("\nЗадача 34: Задайте массив заполненный случайными положительными трёхзначными числами. ");
                 Console.WriteLine("Напишите программу, которая покажет количество чётных чисел в массиве.");
-                Console.WriteLine("Для продолжения нажмите любую клавишу");
+                Console.WriteLine("\nДля продолжения нажмите любую клавишу");
                 Console.ReadKey();
                 var t1 = new Task34();
-                t1.solution34();
+                t1.solution();
             }
             if (choise.Key == ConsoleKey.D2)
             {
                 Console.WriteLine("\nЗадача 36: Задайте одномерный массив, заполненный случайными числами.");
                 Console.WriteLine("Найдите сумму элементов, стоящих на нечётных позициях.");
-                Console.WriteLine("Для продолжения нажмите любую клавишу");
+                Console.WriteLine("\nДля продолжения нажмите любую клавишу");
                 Console.ReadKey();
-                var t1 = new Task36();
-                t1.solution36();
+                var t2 = new Task36();
+                t2.solution();
             }
             if (choise.Key == ConsoleKey.D3)
             {
                 Console.WriteLine("\nЗадача 38: Задайте массив вещественных чисел.");
                 Console.WriteLine("Найдите разницу между максимальным и минимальным элементов массива.");
-                Console.WriteLine("Для продолжения нажмите любую клавишу");
+                Console.WriteLine("\nДля продолжения нажмите любую клавишу");
                 Console.ReadKey();
-                var t1 = new Task38();
-                t1.solution38();
+                var t3 = new Task38();
+                t3.solution();
             }
             else return;
         }
@@ -89,7 +90,7 @@ namespace Geekbrains
             for (int i = 0; i < size; i++)
             {
                 array[i] = new Random().Next(start, end);
-
+                // Нужно исключить значения (-100; 100)
                 Console.Write($"{array[i]} ");
             }
             Console.WriteLine("");

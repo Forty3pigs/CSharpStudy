@@ -2,7 +2,7 @@ namespace Geekbrains
 {
     public class Task34
     {
-        public void solution34()
+        public void solution()
         {
             int size = Arrays.AskSize();
             Console.Write("Enter digit capacity: ");

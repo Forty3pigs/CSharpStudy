@@ -2,7 +2,7 @@ namespace Geekbrains
 {
     public class Task36
     {
-        public void solution36()
+        public void solution()
         {
             int size = Arrays.AskSize();
             int[] array = new Arrays().CreateArray(size);

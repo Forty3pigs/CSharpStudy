@@ -2,7 +2,7 @@ namespace Geekbrains
 {
     public class Task38
     {
-        public void solution38()
+        public void solution()
         {
             bool isDouble = true;
             int size = Arrays.AskSize();
@@ -21,7 +21,7 @@ namespace Geekbrains
                 if (array[i] > max) max = array[i];
 
             }
-            Console.WriteLine($"\nThe difference between Max and Min = {(max - min)} \n");
+            Console.WriteLine($"\nThe difference between Max({max}) and Min({min}) = {(max - min)} \n");
         }
 
     }
