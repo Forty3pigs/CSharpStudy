@@ -19,7 +19,7 @@ namespace Geekbrains
             if (str != null)
             {
                 // Убираем лишнее, оставляем разделение координат через ;
-                str = str.Trim().Replace(" " + separator + " ", ",").Replace(" " + separator + "", "" + separator + "").Replace("" + separator + " ", "" + separator + "").Replace(" ", ";");
+                str = str.Trim().Replace(" " + separator + " ", "" + separator + "").Replace(" " + separator + "", "" + separator + "").Replace("" + separator + " ", "" + separator + "").Replace(" ", ";");
 
                 // Разбираем строку на части и переводим в массив double[]
                 string[] strCoord = str.Split(';');

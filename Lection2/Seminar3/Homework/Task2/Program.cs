@@ -16,7 +16,6 @@ namespace Geekbrains
         }
         static void Sum(string n)
         {
-
             double.TryParse(n, out double result);
             result = 0;
             foreach (char i in n)
@@ -24,7 +23,6 @@ namespace Geekbrains
                 result = result + Char.GetNumericValue(i);
             }
             Console.WriteLine(result);
-
         }
     }
 
