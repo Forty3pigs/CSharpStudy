@@ -30,7 +30,7 @@ namespace Geekbrains
             Console.WriteLine("Найдите разницу между максимальным и минимальным элементов массива.");
 
         }
-        public static void TaskWait()
+        public static void TextWait()
         {
             Console.WriteLine("\nДля продолжения нажмите любую клавишу");
             Console.ReadKey();

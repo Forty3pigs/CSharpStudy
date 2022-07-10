@@ -16,21 +16,21 @@
             if (ch.Key == ConsoleKey.D1)
             {
                 TaskText.Text34();
-                TaskText.TaskWait();
+                TaskText.TextWait();
                 var t1 = new Tasks();
                 t1.solution34();
             }
             if (ch.Key == ConsoleKey.D2)
             {
                 TaskText.Text36();
-                TaskText.TaskWait();
+                TaskText.TextWait();
                 var t2 = new Tasks();
                 t2.solution36();
             }
             if (ch.Key == ConsoleKey.D3)
             {
                 TaskText.Text38();
-                TaskText.TaskWait();
+                TaskText.TextWait();
                 var t3 = new Tasks();
                 t3.solution38();
             }
