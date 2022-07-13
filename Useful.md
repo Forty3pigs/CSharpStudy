@@ -8,9 +8,7 @@ namespace Geekbrains
     {
         static public void Main(string[] args)
         {
-                Console.WriteLine("All non numerics will be ignored ");
-                Console.Write("Enter first number: ");
-                int.TryParse(Console.ReadLine(), out int first);
+
         }
     }
 
@@ -18,6 +16,12 @@ namespace Geekbrains
 
 
 ```
+### Text to Int32
+```
+                Console.WriteLine("All non numerics will be ignored ");
+                Console.Write("Enter first number: ");
+                int.TryParse(Console.ReadLine(), out int first);
+```                
 
 ### Методы
 ```
