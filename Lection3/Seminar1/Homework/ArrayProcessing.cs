@@ -10,7 +10,7 @@ namespace Geekbrains
                 for (int j = 0; j < columns; j++)
                 {
                     Random rand = new Random();
-                    arr[i, j] = rand.Next(start, end) + rand.NextDouble(); //Math.Round(, 2)
+                    arr[i, j] = rand.Next(start, end) + rand.NextDouble();
                 }
             }
             return arr;
@@ -23,26 +23,11 @@ namespace Geekbrains
                 for (int j = 0; j < columns; j++)
                 {
                     Random rand = new Random();
-                    arr[i, j] = rand.Next(start, end); //Math.Round(, 2)
+                    arr[i, j] = rand.Next(start, end);
                 }
             }
             return arr;
         }
-
-        /*
-
-        public int[] RandomizeSize(int start, int end)
-        {
-            int[] size = new int[2];
-            for (int i = 0; i < size.Length; i++)
-            {
-                size[i] = new Random().Next(start, end);
-            }
-            return size;
-        }
-
-        */
-
         public void PrintArray(double[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -50,7 +35,6 @@ namespace Geekbrains
                 Console.WriteLine();
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-
                     Console.Write(string.Format("{0,8:N2} ", array[i, j])); // Выравнивание по 8 символам, 2 знака, после запятой
                 }
                 Console.WriteLine();
@@ -64,7 +48,6 @@ namespace Geekbrains
                 Console.Write("\t");
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-
                     Console.Write(string.Format("{0,7} ", array[i, j])); // Выравнивание по 5 символам
                 }
                 Console.WriteLine();

@@ -2,24 +2,23 @@ namespace Geekbrains
 {
     public class InputProcessing
     {
-        public string errorMsg = "Error.";
+        public string errorMsgSize = "Error. Array size problem";
+        public string errorMsgNull = "Error. Array size is null or empty";
         public string InputCheck(string str)
         {
             if (!String.IsNullOrEmpty(str))
             {
                 return str;
             }
-            else return errorMsg;
+            else return errorMsgNull;
         }
         public int[] ConvertToInt(string[] strToConvert)
         {
             int[] parameters = new int[strToConvert.Length];
             for (int i = 0; i < strToConvert.Length; i++)
-
             {
                 int.TryParse(strToConvert[i], out int p);
-                parameters[i] = p;
-                //parameters[i] = Convert.ToInt32(strToConvert[i]);
+                parameters[i] = Math.Abs(p);
             }
             return parameters;
         }
@@ -31,45 +30,5 @@ namespace Geekbrains
             string[] splitedStr = inputStr.Split(';'); // делим строку по разделителю ;
             return splitedStr;
         }
-
-
     }
 }
-// try
-// {
-
-
-// }
-// catch
-// {
-//     Console.Write("Exeption");
-//     return GetArraySize();
-// }
-
-
-
-
-// public bool CheckInput(string stringForCheck)
-// {
-//     if (!String.IsNullOrEmpty(stringForCheck))
-//     {
-//         return true;
-//     }
-//     else return false;
-
-//                 if (stringForCheck.Length == 2)
-//                 {
-
-//                 }
-//                 else Console.Write("Wrong input");
-// GetArraySize();
-// return null;
-
-
-//             }
-//             GetArraySize();
-// return null;
-
-
-// int.TryParse(inputStr, out int first);
-// return true;

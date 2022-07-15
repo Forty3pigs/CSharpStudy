@@ -2,8 +2,6 @@ namespace Geekbrains
 {
     public static class TaskText
     {
-        // private static string param47 = "size of array";
-        // private static string param50 = "position";
         public static void TaskList()
         {
             TaskText.Text47();
@@ -33,7 +31,6 @@ namespace Geekbrains
         {
             Console.WriteLine("\nЗадача 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, ");
             Console.WriteLine("\t   и возвращает значение этого элемента или же указание, что такого элемента нет.");
-
         }
         /// <summary>
         /// Задача 52. Задайте двумерный массив из целых чисел. 
@@ -43,7 +40,6 @@ namespace Geekbrains
         {
             Console.WriteLine("\nЗадача 52: Задайте двумерный массив из целых чисел. ");
             Console.WriteLine("\t   Найдите среднее арифметическое элементов в каждом столбце.");
-
         }
         public static void TextWait()
         {
@@ -52,8 +48,9 @@ namespace Geekbrains
         }
         public static void InputInvitation(string parameters)
         {
+            Console.WriteLine("\n Caution: \nAll non numeric simbols will be equal to 0 \n" +
+                              "All negative numbers will be positive");
             Console.Write($"\nEnter the {parameters} separated by a space or semicolon: ");
         }
     }
 }
-//            Console.WriteLine(" Caution: \n All non numeric simbols will be equal to 0 \n ");
