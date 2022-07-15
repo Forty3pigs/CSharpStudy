@@ -2,7 +2,7 @@ namespace Geekbrains
 {
     public class Task47
     {
-        private string invitationParam = "size of array";
+        private string invitationParam = "size of curArray";
         private int startArray = -1000;
         private int endArray = 1000;
         public void Solution()
@@ -12,11 +12,11 @@ namespace Geekbrains
             string? size = Console.ReadLine();
             if (inp.InputCheck(size) != inp.errorMsg)
             {
-                int[] arraySize = inp.ConvertToInt(inp.SplitInput(size)); // Как упростить эту запись?
-                if (arraySize.Length == 2)
+                int[] curArraySize = inp.ConvertToInt(inp.SplitInput(size)); // Как упростить эту запись?
+                if (curArraySize.Length == 2)
                 {
                     Arrays arr = new Arrays();
-                    arr.PrintArray(arr.CreateArray(arraySize[0], arraySize[1], startArray, endArray));
+                    arr.PrintArray(arr.CreateArray(curArraySize[0], curArraySize[1], startArray, endArray));
                     TaskText.TextWait();
                 }
                 else
@@ -54,11 +54,11 @@ namespace Geekbrains
                 {
                     Arrays arr = new Arrays();
                     Random rand = new Random();
-                    double[,] array = arr.CreateArray(rand.Next(minArraySize, maxArraySize + 1), rand.Next(minArraySize, maxArraySize + 1), startArray, endArray);
-                    arr.PrintArray(array);
-                    if (elemPos[0] < array.GetLength(0) && elemPos[1] < array.GetLength(1))
+                    double[,] curArray = arr.CreateArray(rand.Next(minArraySize, maxArraySize + 1), rand.Next(minArraySize, maxArraySize + 1), startArray, endArray);
+                    arr.PrintArray(curArray);
+                    if (elemPos[0] < curArray.GetLength(0) && elemPos[1] < curArray.GetLength(1))
                     {
-                        Console.WriteLine($"\nElement in {elemPos[0]},{elemPos[1]} position is " + string.Format("{0,5:N2} ", array[elemPos[0], elemPos[1]]));
+                        Console.WriteLine($"\nElement in {elemPos[0]},{elemPos[1]} position is " + string.Format("{0,5:N2} ", curArray[elemPos[0], elemPos[1]]));
                     }
                     else
                     {
@@ -82,9 +82,36 @@ namespace Geekbrains
     }
     public class Task52
     {
+        private int startArray = 0;
+        private int endArray = 1000;
+        private int minArraySize = 4;
+        private int maxArraySize = 12;
         public void Solution()
         {
+            Arrays arr = new Arrays();
+            Random rand = new Random();
+            int[,] curArray = arr.CreateArrayInt(rand.Next(minArraySize, maxArraySize), rand.Next(minArraySize, maxArraySize), startArray, endArray);
+            arr.PrintArray(curArray);
+            Console.WriteLine(new string('=', curArray.GetLength(1) * 9));
+            Console.Write("\nAverage:");
+            double result = 0.0;
+            // Console.Write("\t");
+            for (int j = 0; j < curArray.GetLength(1); j++)
+            {
+
+                for (int i = 0; i < curArray.GetLength(0); i++)
+                {
+                    result += curArray[i, j];
+
+                }
+                Console.Write(string.Format("{0,7:N2} ", result / curArray.GetLength(0)));
+                result = 0.0;     //"{0,8:N2} ", array[i, j])
+            }
+            Console.WriteLine();
+            TaskText.TextWait();
+
 
         }
+
     }
 }
