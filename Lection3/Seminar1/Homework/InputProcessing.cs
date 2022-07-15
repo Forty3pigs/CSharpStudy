@@ -17,7 +17,9 @@ namespace Geekbrains
             for (int i = 0; i < strToConvert.Length; i++)
 
             {
-                parameters[i] = Convert.ToInt32(strToConvert[i]);
+                int.TryParse(strToConvert[i], out int p);
+                parameters[i] = p;
+                //parameters[i] = Convert.ToInt32(strToConvert[i]);
             }
             return parameters;
         }

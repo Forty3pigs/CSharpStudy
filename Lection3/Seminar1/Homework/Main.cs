@@ -25,7 +25,7 @@
             {
                 Console.Clear();
                 TaskText.Text50();
-                TaskText.TextWait();
+                //TaskText.TextWait();
                 var t = new Task50();
                 t.Solution();
             }
@@ -33,7 +33,7 @@
             {
                 Console.Clear();
                 TaskText.Text52();
-                TaskText.TextWait();
+                //TaskText.TextWait();
                 var t = new Task52();
                 t.Solution();
             }
