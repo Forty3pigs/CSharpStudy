@@ -12,5 +12,5 @@ var data = text.Split(" ")
 
 for (int i = 0; i < data.Length; i++)
 {
-    Console.WriteLine(data[i]);
+    Console.WriteLine(data[i].Item1 * 10); // now it int32 here
 }
