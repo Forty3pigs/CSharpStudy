@@ -27,39 +27,60 @@ namespace Geekbrains
 
             Console.WriteLine();
         }
+        /// <summary>
+        /// <c>Circus</c> Проходит по спирали начиная с верхнего левого угла [0,0] по массиву.
+        /// Проходит один слой, потом вызывает себя с началом в точке [1,1].
+        /// Заканчивает, оставляя центральную позицию неизменной при квадратном массиве
+        /// с нечётной стороной.
+        /// </summary>
+        /// <param name = "value"> инкремент для заполнения </param> 
+        /// <param name = "start"> координата на диагонали для начала цикла [start,start] </param> 
         public static void Circus(int[,] x, int value, int start, int length0, int length1)
         {
+            // Проверка для завешения основного заполнения и выход на коррекционные
             if (start < length0 - 1 && start < length1 - 1)
             {
+
+                // -->
                 for (int j = start, i = start; j < length1; j++)
                 {
                     x[i, j] = value++;
                 }
 
+                //  |
+                //  V
                 for (int i = start + 1, j = length1 - 1; i < length0; i++)
                 {
                     x[i, j] = value++;
                 }
 
+                // <--
                 for (int j = length1 - 2, i = length0 - 1; j >= start; j--)
                 {
                     x[i, j] = value++;
                 }
 
+                //  ^
+                //  |
                 for (int i = length0 - 2, j = start; i > start; i--)
                 {
                     x[i, j] = value++;
                 }
 
+                // Начинаем на 1 позицию ниже по диагонали, уменьшаем длину прохода.
                 Circus(x, value, start + 1, length0 - 1, length1 - 1);
 
             }
 
+            // Здесь заполняется центральная позиция в квадратном массиве с
+            // нечётным количеством сторон
             else if (start == length0 - 1 && length0 == length1)
             {
                 x[start, start] = value;
             }
 
+            // Здесь заполнение центральной части в случае прямоугольного массива,
+            // когда ширина больше длины
             else if (start == length0 - 1 && length0 < length1)
             {
                 x[start, start] = value++;
@@ -69,6 +90,8 @@ namespace Geekbrains
                 }
             }
 
+            // Здесь заполнение центральной части в случае прямоугольного массива,
+            // когда длина больше ширины
             else if (start == length1 - 1 && length0 > length1)
             {
                 x[start, start] = value++;
@@ -82,6 +105,7 @@ namespace Geekbrains
 
         }
 
+        // Стандартный Принт 2Д массива.
         public static void PrintArray(int[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -90,9 +114,9 @@ namespace Geekbrains
                 Console.Write("  ");
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    Console.Write(string.Format("{0,3} ", array[i, j])); // Выравнивание по 5 символам
+                    Console.Write(string.Format("{0,3} ", array[i, j]));
                 }
-                //Console.WriteLine();
+
             }
             Console.WriteLine();
         }

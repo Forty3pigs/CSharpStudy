@@ -19,9 +19,10 @@ namespace Geekbrains
             Console.WriteLine("Введите глубину массива");
             int z = Convert.ToInt32(Console.ReadLine());
             int[,,] arr = new int[x, y, z];
-            int value = 10;
-            if (x * y * z < 89)
+            int value = 10;     //первое 2значное число
+            if (x * y * z < 89) // проверка размеров массива, чтоб уникальных чисел хватило
             {
+                // Ну это просто шуточное решение. Числа подряд действительно уникальные.
                 Console.WriteLine("\nУсловия соблюдены, значения уникальны :)");
                 CreateArray(arr, value);
                 PrintArray(arr);
@@ -29,11 +30,12 @@ namespace Geekbrains
                                 + " твоя мечта осущеcтвится...");
                 Console.ReadKey();
 
+                // а вот тут "нормальное" решение
                 Console.WriteLine("А вот тут какой-никакой рандом");
-                int[] rand2Digits = new int[90];
-                randomizedDigits(rand2Digits);
-                CreateRandArray(arr, rand2Digits, 0);
-                PrintArray(arr);
+                int[] rand2Digits = new int[90];        //генерим массив длиной 90 для всех 2значных чисел подряд.
+                randomizedDigits(rand2Digits);          //загоняем в рандомилку. см. описание метода
+                CreateRandArray(arr, rand2Digits, 0);   //создаём массив
+                PrintArray(arr);                        //печатаем
 
             }
             else { Console.WriteLine("I don't have so many unique 2digit numbers"); }
@@ -72,6 +74,11 @@ namespace Geekbrains
             }
         }
 
+        /// <summary>
+        /// <c>randomizedDigits</c> принимает на вход одномерный пустой массив длиной 90
+        /// заполняет его линейно. Дальше истерично свапает попарно в нём числа по 2 рандомным позициям.
+        /// Из-за того, что это попарный свап, все значения уникальны и их максимальное кол-во.
+        /// </summary>
         public static void randomizedDigits(int[] rand1D)
         {
             Random rand = new Random();
@@ -91,6 +98,12 @@ namespace Geekbrains
             }
         }
 
+        /// <summary>
+        /// <c>CreateRandArray</c> принимает на вход трехмерный массив и
+        /// заполняет его последовательно дёргая из измученного рандом-свапом 
+        /// одномерного массива значения.
+        /// </summary>
+        /// <param name = "val"> стартовое значение индекса 1Д-массива. </param> 
         public static void CreateRandArray(int[,,] array, int[] randDig, int val)
         {
             for (int i = 0; i < array.GetLength(0); i++)
