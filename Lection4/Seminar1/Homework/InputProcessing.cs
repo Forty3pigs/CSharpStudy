@@ -3,6 +3,7 @@ namespace Geekbrains
     ///<include file='info.xml' path='docs/InputProcessing/helps[@name="InputProcessing"]/*'/>
     public class InputProcessing
     {
+        ///<include file='info.xml' path='docs/InputValidation/helps[@name="InputValidation"]/*'/>
         public bool InputValidation(string? strForValidation, int[] sizes, TextAndMessage print)
         {
             if (!String.IsNullOrEmpty(strForValidation))
@@ -26,6 +27,7 @@ namespace Geekbrains
                 return false;
             }
         }
+        ///<include file='info.xml' path='docs/InputValidation/helps[@name="InputValidation"]/*'/>
         public bool InputValidation(string? strForValidation, TextAndMessage print)
         {
             if (!String.IsNullOrEmpty(strForValidation))
@@ -39,6 +41,7 @@ namespace Geekbrains
                 return false;
             }
         }
+        ///<include file='info.xml' path='docs/GetSizes/helps[@name="GetSizes"]/*'/>
         public int[] GetSizes(string inputString)
         {
             int[] sizes = this.ConvertToInt(this.SplitInput(inputString));
@@ -54,6 +57,7 @@ namespace Geekbrains
             }
             return parameters;
         }
+        ///<include file='info.xml' path='docs/SplitInput/helps[@name="SplitInput"]/*'/>
         public string[] SplitInput(string inputStr)
         {
             // Убираем лишнее, оставляем разделение размеров через ;

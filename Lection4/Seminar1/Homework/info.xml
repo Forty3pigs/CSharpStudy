@@ -6,7 +6,7 @@ The main <c>Arrays</c> class.
 Contains all methods for performing array functions.
                   </summary>
                   <remarks>
-                        <para>This class can create, print arrays</para>
+                        <para>This class can create, print arrays.</para>
                   </remarks>
             </helps>
             <helps name="CreateArrayInt">
@@ -14,9 +14,6 @@ Contains all methods for performing array functions.
                   <summary>
 Create array of Int32 random numbers with the specified params.
                   </summary>
-                  <returns>
-Array of Int32
-                  </returns>
                   <param name="rows">Rows quantity in array.</param>
                   <param name="columns">Columns quantity in array.</param>
                   <param name="start">The number from which the array starts.</param>
@@ -38,8 +35,46 @@ The main <c>InputProcessing</c> class.
 Contains all methods for performing input processing functions.
                   </summary>
                   <remarks>
-                        <para>This class can format, validate and convert input data</para>
+                        <para>This class can format, validate and convert input data.</para>
                   </remarks>
             </helps>
       </InputProcessing>
+
+      <InputValidation>
+            <helps name="InputValidation">
+                  <summary>
+Validate User input
+                  </summary>
+                  <returns>
+                  True or False
+                  </returns>
+                  <param name="strForValidation">String from User you need to check.</param>
+                  <param name="sizes">Converted data from string from User. Height and Weight in array.</param>
+                  <param name="print">transmitted exemplar of the TaskText class</param>
+            </helps>
+      </InputValidation>
+      <GetSizes>
+            <helps name="GetSizes">
+                  <summary>
+Get array of Height and Weight from splited and converted to x;y format string.
+                  </summary>
+                  <param name="inputString">String from User with data you need.</param>
+            </helps>
+      </GetSizes>
+      <ConvertToInt>
+            <helps name="ConvertToInt">
+                  <summary>
+Convert array of strings to array of positive Int32s
+                  </summary>
+                  <param name="strToConvert">Array of strings.</param>
+            </helps>
+      </ConvertToInt>
+      <SplitInput>
+            <helps name="SplitInput">
+                  <summary>
+Stlit input string divided by semicolon or spases to array of strings without this dividers.
+                  </summary>
+                  <param name="inputStr">String for split</param>
+            </helps>
+      </SplitInput>
 </docs>
