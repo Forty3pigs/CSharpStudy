@@ -20,8 +20,9 @@ namespace Geekbrains
             int z = Convert.ToInt32(Console.ReadLine());
             int[,,] arr = new int[x, y, z];
             int value = 10;     //первое 2значное число
-            if (x * y * z < 89) // проверка размеров массива, чтоб уникальных чисел хватило
+            if (x * y * z < 90) // проверка размеров массива, чтоб уникальных чисел хватило
             {
+
                 // Ну это просто шуточное решение. Числа подряд действительно уникальные.
                 Console.WriteLine("\nУсловия соблюдены, значения уникальны :)");
                 CreateArray(arr, value);
@@ -29,6 +30,7 @@ namespace Geekbrains
                 Console.WriteLine("Нажми на кнопку, полчишь результат"
                                 + " твоя мечта осущеcтвится...");
                 Console.ReadKey();
+
 
                 // а вот тут "нормальное" решение
                 Console.WriteLine("А вот тут какой-никакой рандом");
@@ -41,7 +43,7 @@ namespace Geekbrains
             else { Console.WriteLine("I don't have so many unique 2digit numbers"); }
 
         }
-
+        //Just4Fun
         public static void CreateArray(int[,,] array, int value)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -56,6 +58,7 @@ namespace Geekbrains
             }
         }
 
+        //Just4Fun
         public static void PrintArray(int[,,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)
@@ -87,7 +90,7 @@ namespace Geekbrains
             {
                 rand1D[i] = i + 10;
             }
-            for (int i = 0; i < 8100; i++)
+            for (int i = 0; i < 8100; i++) // хз, просто 90 в квадрате -_-*
             {
                 ind1 = rand.Next(0, 90);
                 ind2 = rand.Next(0, 90);
