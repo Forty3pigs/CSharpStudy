@@ -26,7 +26,7 @@ namespace Geekbrains
                 CreateArray(arr, value);
                 PrintArray(arr);
                 Console.WriteLine("Нажми на кнопку, полчишь результат"
-                                + "твоя мечта осущеcтвится...");
+                                + " твоя мечта осущеcтвится...");
                 Console.ReadKey();
 
                 Console.WriteLine("А вот тут какой-никакой рандом");
