@@ -1,8 +1,9 @@
 namespace Geekbrains
 {
+    ///<include file='info.xml' path='docs/InputProcessing/helps[@name="InputProcessing"]/*'/>
     public class InputProcessing
     {
-        public bool InputValidation(string? strForValidation, int[] sizes, TextAndMessage tm)
+        public bool InputValidation(string? strForValidation, int[] sizes, TextAndMessage print)
         {
             if (!String.IsNullOrEmpty(strForValidation))
             {
@@ -13,29 +14,28 @@ namespace Geekbrains
                 }
                 else
                 {
-                    tm.ErrorArraySize();
-                    tm.TextWait();
+                    print.ErrorArraySize();
+                    print.TextWait();
                     return false;
                 }
             }
             else
             {
-                tm.ErrorEmptyInput();
-                tm.TextWait();
+                print.ErrorEmptyInput();
+                print.TextWait();
                 return false;
             }
         }
-        public bool InputValidation(string? strForValidation, TextAndMessage tm)
+        public bool InputValidation(string? strForValidation, TextAndMessage print)
         {
-            if (!String.IsNullOrEmpty(strForValidation)
-                && Convert.ToInt32(strForValidation) > 0)
+            if (!String.IsNullOrEmpty(strForValidation))
             {
                 return true;
             }
             else
             {
-                tm.ErrorArraySize();
-                tm.TextWait();
+                print.ErrorArraySize();
+                print.TextWait();
                 return false;
             }
         }
@@ -57,8 +57,12 @@ namespace Geekbrains
         public string[] SplitInput(string inputStr)
         {
             // Убираем лишнее, оставляем разделение размеров через ;
-            inputStr = inputStr.Trim().Replace(" ; ", ";").Replace(" ;", ";").Replace("; ", ";").Replace(" ", ";");
-            //Console.WriteLine(inputStr);             // отладочный вывод
+            inputStr = inputStr.Trim()
+                               .Replace(" ; ", ";")
+                               .Replace(" ;", ";")
+                               .Replace("; ", ";")
+                               .Replace(" ", ";");
+
             string[] splitedStr = inputStr.Split(';'); // делим строку по разделителю ;
             return splitedStr;
         }

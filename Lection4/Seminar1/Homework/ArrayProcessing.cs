@@ -1,7 +1,9 @@
 namespace Geekbrains
 {
+    ///<include file='info.xml' path='docs/ArrayProcessing/helps[@name="Arrays"]/*'/>
     class Arrays
     {
+        ///<include file='info.xml' path='docs/ArrayProcessing/helps[@name="CreateArrayInt"]/*'/>
         public int[,] CreateArrayInt(int rows, int columns, int start, int end)
         {
             int[,] arr = new int[rows, columns];
@@ -15,6 +17,7 @@ namespace Geekbrains
             }
             return arr;
         }
+        ///<include file='info.xml' path='docs/helps[@name="PrintArray"]/*'/>
         public void PrintArray(int[,] array)
         {
             for (int i = 0; i < array.GetLength(0); i++)

@@ -33,9 +33,10 @@ namespace Geekbrains
             Console.WriteLine(_caution);
             Console.Write($"\nEnter the {parameters} separated by a space or semicolon: ");
         }
-        private string _intro = "\nPress:     \x11 1 \x10  for start Task 47" +
-                                "\n \t   \x11 2 \x10  for start Task 50" +
-                                "\n \t   \x11 3 \x10  for start Task 52" +
+        public void minRowSum(int row) { Console.WriteLine($"The sum of the values in {row} row is minimal"); }
+        private string _intro = "\nPress:     \x11 1 \x10  for start Task 54" +
+                                "\n \t   \x11 2 \x10  for start Task 56" +
+                                "\n \t   \x11 3 \x10  for start Task 58" +
                                 "\n\n\t\x11 Escape \x10  for quit\n";
         private string _text54 = "\nЗадача 54: Задайте двумерный массив. Напишите программу, которая " +
                                  "упорядочит по возрастанию элементы каждой строки двумерного массива.";
