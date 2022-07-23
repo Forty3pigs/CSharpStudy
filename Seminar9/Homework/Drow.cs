@@ -10,39 +10,38 @@ namespace Geekbrains
             ConsoleKeyInfo pressed;
             ChoisePosition(taskCount, _choise);
             pressed = Console.ReadKey();
-            if (pressed.Key == ConsoleKey.Enter)
-            {
-                Console.Clear();
-                Console.WriteLine("Drow choise = " + _choise);
-                return _choise;
-            }
 
-            else if (pressed.Key == ConsoleKey.UpArrow && _choise == 0)
+            while (pressed.Key != ConsoleKey.Enter)
             {
-                return Navigation(taskCount);
-            }
+                if (pressed.Key == ConsoleKey.UpArrow && _choise == 0)
+                {
+                    _choise = 0;
+                }
 
-            else if (pressed.Key == ConsoleKey.DownArrow && _choise < taskCount)
-            {
-                _choise++;
-                ChoisePosition(taskCount, _choise);
-                return Navigation(taskCount);
-            }
+                else if (pressed.Key == ConsoleKey.DownArrow && _choise < taskCount)
+                {
+                    _choise++;
+                    ChoisePosition(taskCount, _choise);
+                }
 
-            else if (pressed.Key == ConsoleKey.DownArrow && _choise == taskCount)
-            {
-                _choise = 0;
-                ChoisePosition(taskCount, _choise);
-                return Navigation(taskCount);
-            }
+                else if (pressed.Key == ConsoleKey.DownArrow && _choise == taskCount)
+                {
+                    _choise = 0;
+                    ChoisePosition(taskCount, _choise);
 
-            else if (pressed.Key == ConsoleKey.UpArrow && _choise > 0)
-            {
-                _choise--;
-                ChoisePosition(taskCount, _choise);
-                return Navigation(taskCount);
+                }
+
+                else if (pressed.Key == ConsoleKey.UpArrow && _choise > 0)
+                {
+                    _choise--;
+                    ChoisePosition(taskCount, _choise);
+
+                }
+
             }
-            else return null;
+            _choise == 0
+
+            return null;
 
 
         }
