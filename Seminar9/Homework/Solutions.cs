@@ -9,14 +9,14 @@ namespace Geekbrains
         {
             switch (taskNumber)
             {
-                case 0:
-                    Task64(tam, taskNumber);
-                    break;
                 case 1:
                     Task64(tam, taskNumber);
                     break;
                 case 2:
-                    Console.WriteLine("68");
+                    Task64(tam, taskNumber);
+                    break;
+                case 3:
+                    Task66(tam, taskNumber);
                     break;
 
             }
@@ -24,12 +24,18 @@ namespace Geekbrains
         private void Task64(TextAndMessage tam, int taskNumber)
         {
             tam.TaskText(taskNumber);
+            //Console.WriteLine("check pos 0");
             tam.InputM();
+            //Console.WriteLine("check pos m");            
             int.TryParse(Console.ReadLine(), out int m);
             tam.InputN();
+            //Console.WriteLine("check pos n");
             int.TryParse(Console.ReadLine(), out int n);
             int sum = 0;
-            Console.SetCursorPosition(39, 10);
+            Console.WriteLine();
+            //Console.SetCursorPosition((100 / 2 + 3 * (n - m)) / 2, 8);
+
+            //Console.SetCursorPosition(20 + 11, 8);  // taskPosition + "Задача 68: " равное 11
             for (int i = m; i <= n; i++)
             {
 
@@ -37,12 +43,36 @@ namespace Geekbrains
                 else Console.Write(i);
                 sum += i;
             }
-            Console.SetCursorPosition(0, 10 + 10);
-            Console.WriteLine("\nСумма чисел равна: " + sum);
+            //Console.SetCursorPosition(20 - 8, 12);              // taskPosition - ("Сумма чисел равна:" - "Задача 68: ") равное 8
+            Console.WriteLine("\n\nСумма чисел равна: " + sum);
+
+        }
+        private void Task66(TextAndMessage tam, int taskNumber)
+        {
+            tam.TaskText(taskNumber);
+            tam.InputN();
+            int.TryParse(Console.ReadLine(), out int n);
+            tam.InputM();
+            int.TryParse(Console.ReadLine(), out int m);
+
+            static int A(int n, int m)
+            {
+                if (n == 0)
+                    return m + 1;
+                else
+                  if ((n != 0) && (m == 0))
+                    return A(n - 1, 1);
+                else
+                    return A(n - 1, A(n, m - 1));
+            }
+
+            Console.WriteLine("Результат функции: " + A(n, m));
         }
 
     }
 }
+// Сумма чисел равна:
+//         Задача 64: 
 /*   public class Task66
    {
        private string invitationParam = "element position";

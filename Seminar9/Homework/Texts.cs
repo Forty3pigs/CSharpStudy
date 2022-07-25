@@ -2,13 +2,20 @@ namespace Geekbrains
 {
     public class TextAndMessage
     {
-        private int[] _logoPosition = new int[2] { 30, 0 };
+        private int[] _logoPosition = new int[2] { 24, 0 };
+        private int[] _thxPosition = new int[2] { 0, 0 };
         private int[] _taskPosition = new int[2] { 20, 1 };
         private int[] _introPosition = new int[2] { 40, 10 };
 
-        public void Logo()
+        public void Print(string listForPrint)
         {
-            ListsPrint(_logo, _logoPosition);
+            Console.Clear();
+            Console.SetCursorPosition(0, 0);
+            if (listForPrint == "logo") ListsPrint(_logo, _logoPosition);
+            if (listForPrint == "thx") ListsPrint(_thx, _thxPosition);
+            if (listForPrint == "for") ListsPrint(_for, _thxPosition);
+            if (listForPrint == "all") ListsPrint(_all, _thxPosition);
+
             Thread.Sleep(1500);
         }
 
@@ -24,16 +31,20 @@ namespace Geekbrains
 
         public void TaskText(int N)
         {
-            Console.SetCursorPosition(_taskPosition[0], 0);
-            Console.Write(_tasks[N]);
-            Console.SetCursorPosition(_introPosition[0], 2);
+            // Console.WriteLine();
+            // Console.WriteLine();
+            Console.SetCursorPosition(_taskPosition[0], 2);
+            Console.WriteLine(_tasks[2 * N - 1]);
+            Console.SetCursorPosition(_taskPosition[0], 3);
+            Console.WriteLine(_tasks[2 * N]);
+            //Console.SetCursorPosition(_introPosition[0], 4);
         }
 
         private void ListsPrint(List<string> list, int[] position)
         {
             for (int i = 0; i < list.Count; i++)
             {
-                Console.SetCursorPosition(position[0], position[1]++);
+                Console.SetCursorPosition(position[0], position[1] + i);
                 Console.WriteLine(list[i]);
                 Thread.Sleep(30);
             }
@@ -53,18 +64,18 @@ namespace Geekbrains
 
         public void InputM()
         {
-            Console.SetCursorPosition(_introPosition[0], 10);
+            //Console.SetCursorPosition(_introPosition[0], 5);
             Console.Write(_inputM);
-            Console.SetCursorPosition(_introPosition[0] + _inputM.Length
-                                   , 10);
+            //Console.SetCursorPosition(_introPosition[0] + _inputM.Length
+            //                       , 3);
         }
 
         public void InputN()
         {
-            Console.SetCursorPosition(_introPosition[0], 11);
+            //Console.SetCursorPosition(_introPosition[0], 6);
             Console.Write(_inputN);
-            Console.SetCursorPosition(_introPosition[0] + _inputN.Length
-                                   , _introPosition[1] + 1);
+            //Console.SetCursorPosition(_introPosition[0] + _inputN.Length
+            //                      , 6);
         }
 
         public void InputInvitation(string parameters)
@@ -82,15 +93,15 @@ namespace Geekbrains
         };
         private List<string> _tasks = new List<string>
         {
-            "",
-            "Задача 64: Задайте значения M и N. Напишите программу, которая ",
-            "           выведет все натуральные числа в промежутке от M до N. ",
+            "",                                                                             // 0
+            "Задача 64: Задайте значения M и N. Напишите программу, которая ",              // 1
+            "           выведет все натуральные числа в промежутке от M до N. ",            // 2
 
-            "Задача 66: Задайте значения M и N. Напишите программу, которая ",
-            "           найдёт сумму натуральных элементов в промежутке от M до N.",
+            "Задача 66: Задайте значения M и N. Напишите программу, которая ",              // 3
+            "           найдёт сумму натуральных элементов в промежутке от M до N.",        // 4
 
-            "Задача 68: Напишите программу вычисления функции Аккермана ",
-            "           с помощью рекурсии. Даны два неотрицательных числа m и n."
+            "Задача 68: Напишите программу вычисления функции Аккермана ",                  // 5
+            "           с помощью рекурсии. Даны два неотрицательных числа m и n."          // 6
         };
 
         private string _wait = "\nДля продолжения нажмите любую клавишу";
@@ -131,7 +142,81 @@ namespace Geekbrains
             "          %#-----*#%%%%=----------------#@-           \n",
             "        -#%%%=@#---------------------*##              \n",
             "                  @###..-----..####                   \n"
-        };
 
+        };
+        private List<string> _thx = new List<string>
+        {
+            "",
+"          { ! !!!!!!!*!! !                                              ",
+" !!+!!!!!!!$!!!!!!!!!!!!!! !    ?.!                                     ",
+"!!!!!!!!!!!!!!!!!!!!!!!!!!!)   \\ !!!!                                   ",
+"! !!!!@!##$!!!!!!               !!!!!/                                  ",
+"           !!!!!!                !!!!!                                  ",
+"           !{!!!!               ?!!/!/                                  ",
+"           !!!!!!               !!!/!/                           #!@-   ",
+"           !!!!!!               ?!!!!/!?            >>         !!!--!!  ",
+"           !$!!!!               !!!!!!!!!!!\\       *!!!^!    $!!!}!!-+  ",
+"            !!!]!^             ,!!!!!!!!!!!!|      >!!!!!] !!!!!!!!     ",
+"            !!!!!              !!!!!!!!!!!!!!!      !*!!!!%!!{!!!       ",
+"           {!!!!!               !!!!!/  !\\!!)!       !!!!!!!!!!}        ",
+"           {!!!%[              !!!!!/   !!!!!!        !!^!!!$!          ",
+"            {!!!!              !!!!!!   !\\!!!!!     *!!!!!!!!!          ",
+"           {$!!!!             !!!!!!/    ,!!!!|    *!!!!!!!!!!!         ",
+"            !!!!!^            !,!!!!    .!!!!!|   !!!!!!! !!!!!!        ",
+"            !!!!!             !\\!!!!     ,!!!!| !!!!!>[   %]!!!!!#      ",
+"              %                ,!!       !!!!! )<!(!!*      $!!!!       ",
+"                                                (((!*                   ",
+            ""
+        };
+        private List<string> _for = new List<string>
+        {
+            "",
+"        !!!!!!!![!!*                                                    ",
+"     !!}!#!!!!!!!!!!!*                                                  ",
+"    ! - !!!}!!!!!!!!!!!!<                                               ",
+"   !!!!!!!       !!!!!!                                                 ",
+"  +!!!!!          !!!!!!                                                ",
+"  !!!!!!          !!!!<!                                                ",
+"   !!!!!           *!!!                                       !#!!      ",
+"  +!!!!!#                        ?! !/?        !!!!!!     !%!!{!!!!!    ",
+"   +!!@!!                      !!!!!!!!!!,!\\   )!!!!!!! !!!!{!!!!!!!!  ",
+"    !!!!!!                  |!!\\!!!/!/!.!!!\\!   (!!!!!!!!!!!!{ ##!!!- ",
+"     !!!!!!   ] ^!^!!* (    |!!!!!!     ?.!!!|!    (!!!!!!!!!{          ",
+"     !!!!!!!!!!!!!!!!!<    |!!!!.       .!! !!|     >!!!!!!             ",
+"      !!!!!!$]!!!!!!!!    )!!!!!         ,!!!!     !!!!!!!              ",
+"     -!!!!!!!!!!^          !!!!!?       !!!\\!|     >!!!!!]             ",
+"    @!!!!!!{!!]            !!\\!!.!   /!!!,!!!|      !!!!!              ",
+"     !!!!!!!!!!!            )!!!!!!!!!!!!!!!       *!!!!!]              ",
+"          !!!!!![             !!!!!/! !.!!\\        *!!!!!!             ",
+"          $!!!!!!^                .//               !!!!!]              ",
+"            !!!!!                                                       ",
+"             !!]!^                                                      ",
+
+            ""
+        };
+        private List<string> _all = new List<string>
+        {
+            "",
+"                                   /!!!.!         !!!>!                 ",
+"                                   !!!!!!        !!!!!![                ",
+"                                   !!!!!!        !!!!!![                ",
+"                                   !!!!!!        (!!!!!                 ",
+"                                   /!!!!!         !!!!![                ",
+"                                   !!!!!!        !!!!!!                 ",
+"            {!!!!!!!!!!!           !!!!!?        !!!!!!                 ",
+"           !!!!!!!!!!!!!!)         !!!!!!        (!!!!!                 ",
+"           !$!!!!!!!!!<!!)         !!!!!!        !!!!!!                 ",
+"            !%%      *!!!!)        !!!!!!        (!!!!!                 ",
+"            !!!! !!  !<!!!         !!!!!!        !!!!!!                 ",
+"          !!!!!!!!!!!!!!!!         !!!!!!        !!!!!!                 ",
+"        !!$!!!!!!!!>!!!!!|         !!!!!!        !!!!!!                 ",
+"       }!!!!!%    ^!!!!!!)        !!!!!!!       (!!!!!!                 ",
+"       !!!!!$     !!!!!!!          !!!!!?        !!!!!!                 ",
+"       #!!!!!    [!!!!!!!!!!!      !!!!!?        (!!!!!                 ",
+"        #!!!!!!!!!!!!!!!!!!!!!    ?!!!!!!        !!!!!!                 ",
+"         !!!!!!!!!!*!!!!!!!!!     ?!!!!!!        !!!!!!                 ",
+"           {!!!!!!!* !(!!!)        !!!!!?        !!!!!!                 ",
+""
+        };
     }
 }

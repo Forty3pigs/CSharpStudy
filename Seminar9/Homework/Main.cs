@@ -9,10 +9,13 @@
             TextAndMessage tam = new TextAndMessage();
             Drow drow = new Drow();
             Tasks task = new Tasks();
-            Console.SetWindowSize(120, 60);
+            Console.SetWindowSize(100, 60);
             //print.Logo();
-            //Console.Clear();
+            Console.Clear();
             //Console.ReadKey();
+            tam.Print("logo");
+            tam.TextWait();
+            Console.Clear();
             tam.Intro();
             choise = drow.Navigation(tam.GetTaskListCount());
             Console.WriteLine("Main choise = " + choise);
@@ -20,9 +23,14 @@
             {
                 int ch = Convert.ToInt32(choise);
                 Console.WriteLine("Main ch =" + ch);
-                task.Solution(tam, ch);
-                Console.ReadKey();
+                task.Solution(tam, ch + 1);
+                tam.TextWait();
             }
+            Console.Clear();
+            tam.Print("thx");
+            tam.Print("for");
+            tam.Print("all");
+            //tam.TextWait();
             //else Main();
             //Console.Clear();
             //Console.WriteLine("n.Length");

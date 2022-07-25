@@ -7,12 +7,13 @@ namespace Geekbrains
 
         public int? Navigation(int taskCount)
         {
-            ConsoleKeyInfo pressed;
+            ConsoleKeyInfo pressed = new ConsoleKeyInfo();
             ChoisePosition(taskCount, _choise);
-            pressed = Console.ReadKey();
+            //pressed = Console.ReadKey();
 
             while (pressed.Key != ConsoleKey.Enter)
             {
+                pressed = Console.ReadKey();
                 if (pressed.Key == ConsoleKey.UpArrow && _choise == 0)
                 {
                     _choise = 0;
@@ -28,22 +29,17 @@ namespace Geekbrains
                 {
                     _choise = 0;
                     ChoisePosition(taskCount, _choise);
-
                 }
 
                 else if (pressed.Key == ConsoleKey.UpArrow && _choise > 0)
                 {
                     _choise--;
                     ChoisePosition(taskCount, _choise);
-
                 }
-
             }
-            _choise == 0
-
-            return null;
-
-
+            Console.Clear();
+            Console.WriteLine("Drow choise = " + _choise);
+            return _choise;
         }
 
         private void ChoisePosition(int taskCount, int arrowPosition)
