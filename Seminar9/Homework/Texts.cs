@@ -3,20 +3,28 @@ namespace Geekbrains
     public class TextAndMessage
     {
         private int[] _logoPosition = new int[2] { 24, 0 };
-        private int[] _thxPosition = new int[2] { 0, 0 };
-        private int[] _taskPosition = new int[2] { 20, 1 };
         private int[] _introPosition = new int[2] { 40, 10 };
+        private int[] _taskPosition = new int[2] { 20, 1 };
+        private int[] _thxPosition = new int[2] { 15, 15 };
 
         public void Print(string listForPrint)
         {
             Console.Clear();
             Console.SetCursorPosition(0, 0);
-            if (listForPrint == "logo") ListsPrint(_logo, _logoPosition);
-            if (listForPrint == "thx") ListsPrint(_thx, _thxPosition);
-            if (listForPrint == "for") ListsPrint(_for, _thxPosition);
-            if (listForPrint == "all") ListsPrint(_all, _thxPosition);
+
+            if (listForPrint == "logo")
+            {
+                ListsPrint(_logo, _logoPosition);
+            }
+            if (listForPrint == "exit")
+            {
+                ListsPrint(_thx, _thxPosition);
+                ListsPrint(_for, _thxPosition);
+                ListsPrint(_all, _thxPosition);
+            }
 
             Thread.Sleep(1500);
+            Console.Clear();
         }
 
         public void Intro()
@@ -26,18 +34,17 @@ namespace Geekbrains
         }
         public int GetTaskListCount()
         {
+            // исходя из расчёта, что текст задания занимает 2 позиции в списке
+            // а первая позиция - пустая строка
             return (this._tasks.Count - 1) / 2;
         }
 
         public void TaskText(int N)
         {
-            // Console.WriteLine();
-            // Console.WriteLine();
             Console.SetCursorPosition(_taskPosition[0], 2);
             Console.WriteLine(_tasks[2 * N - 1]);
             Console.SetCursorPosition(_taskPosition[0], 3);
             Console.WriteLine(_tasks[2 * N]);
-            //Console.SetCursorPosition(_introPosition[0], 4);
         }
 
         private void ListsPrint(List<string> list, int[] position)
@@ -48,35 +55,16 @@ namespace Geekbrains
                 Console.WriteLine(list[i]);
                 Thread.Sleep(30);
             }
-
         }
 
-
-        // public void ErrorEmptyInput() { Console.WriteLine(_errorMsgNull); }
-        // public void ErrorArraySize() { Console.WriteLine(_errorMsgSize); }
-        // public void GeneratedArray() { Console.WriteLine(_generatedArray); }
-        // public void ResultedArray() { Console.WriteLine(_resultedArray); }
         public void TextWait()
         {
             Console.WriteLine(_wait);
             Console.ReadKey();
         }
-
-        public void InputM()
-        {
-            //Console.SetCursorPosition(_introPosition[0], 5);
-            Console.Write(_inputM);
-            //Console.SetCursorPosition(_introPosition[0] + _inputM.Length
-            //                       , 3);
-        }
-
-        public void InputN()
-        {
-            //Console.SetCursorPosition(_introPosition[0], 6);
-            Console.Write(_inputN);
-            //Console.SetCursorPosition(_introPosition[0] + _inputN.Length
-            //                      , 6);
-        }
+        public void ReturnOrExit() { Console.WriteLine(_roe); }
+        public void InputM() { Console.Write(_inputM); }
+        public void InputN() { Console.Write(_inputN); }
 
         public void InputInvitation(string parameters)
         {
@@ -105,16 +93,12 @@ namespace Geekbrains
         };
 
         private string _wait = "\nДля продолжения нажмите любую клавишу";
+        private string _roe = "\nДля возврата в главное меню нажмите любую кнопку ил Escape для выхода";
+        private string _boe = "\nЗначений для вывода больше 100. Для продолжения нажмите любую кнопку или Escape для выхода в главное меню.";
         private string _caution = "\nCaution: \nAll non numeric simbols will be equal to 0 \n" +
                                   "All negative numbers will be positive";
         private string _inputM = "Введите М: ";
         private string _inputN = "Введите N: ";
-
-        // private string _errorMsgNull = "Error. Array size is null or empty";
-        // private string _errorMsgSize = "Error. Array size problem";
-        // private string _generatedArray = "Generated array:";
-        // private string _resultedArray = "Resulted array:";
-
         private List<string> _logo = new List<string>
         {
             "",
@@ -144,6 +128,7 @@ namespace Geekbrains
             "                  @###..-----..####                   \n"
 
         };
+
         private List<string> _thx = new List<string>
         {
             "",
@@ -168,6 +153,7 @@ namespace Geekbrains
 "                                                (((!*                   ",
             ""
         };
+
         private List<string> _for = new List<string>
         {
             "",
@@ -194,6 +180,7 @@ namespace Geekbrains
 
             ""
         };
+
         private List<string> _all = new List<string>
         {
             "",
@@ -206,7 +193,7 @@ namespace Geekbrains
 "            {!!!!!!!!!!!           !!!!!?        !!!!!!                 ",
 "           !!!!!!!!!!!!!!)         !!!!!!        (!!!!!                 ",
 "           !$!!!!!!!!!<!!)         !!!!!!        !!!!!!                 ",
-"            !%%      *!!!!)        !!!!!!        (!!!!!                 ",
+"                     *!!!!)        !!!!!!        (!!!!!                 ",
 "            !!!! !!  !<!!!         !!!!!!        !!!!!!                 ",
 "          !!!!!!!!!!!!!!!!         !!!!!!        !!!!!!                 ",
 "        !!$!!!!!!!!>!!!!!|         !!!!!!        !!!!!!                 ",

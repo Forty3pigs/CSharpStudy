@@ -9,14 +9,14 @@ namespace Geekbrains
         {
             ConsoleKeyInfo pressed = new ConsoleKeyInfo();
             ChoisePosition(taskCount, _choise);
-            //pressed = Console.ReadKey();
 
             while (pressed.Key != ConsoleKey.Enter)
             {
                 pressed = Console.ReadKey();
                 if (pressed.Key == ConsoleKey.UpArrow && _choise == 0)
                 {
-                    _choise = 0;
+                    _choise = taskCount;
+                    ChoisePosition(taskCount, _choise);
                 }
 
                 else if (pressed.Key == ConsoleKey.DownArrow && _choise < taskCount)
@@ -38,7 +38,6 @@ namespace Geekbrains
                 }
             }
             Console.Clear();
-            Console.WriteLine("Drow choise = " + _choise);
             return _choise;
         }
 
@@ -56,10 +55,6 @@ namespace Geekbrains
             Console.SetCursorPosition(62, 10 + arrowPosition);
             Console.Write("\x11");
             Console.SetCursorPosition(0, 0);
-            //Console.SetCursorPosition(39, 10);
-            // Console.Write("\x10");
-            // Console.SetCursorPosition(62, 10);
-            // Console.Write("\x11");
         }
     }
 }
