@@ -1,0 +1,55 @@
+<docs>
+    <MyArray>
+        <helps name="MyArray">
+            <summary>
+The main <c>Arrays</c> class.
+Contains array samples from task and method InputArray for create your own.
+            </summary>
+        </helps>
+        <summary>
+            <value name="F:Preset0">Boolean parameter to switch choises between type of input and array select</value>
+        </summary>
+
+
+        <helps name="InputArray">
+            <summary>
+Create array of strings from console input.
+            </summary>
+            <returns>
+                  array of strings
+            </returns>
+        </helps>
+    </MyArray>
+    <FHW>
+        <helps name="FHW">
+            <summary>
+The main <c>Homework</c> class.
+Contains solution.
+            </summary>
+        </helps>
+        <helps name="Choise">
+            <summary>
+Perform choise ability by pressing the keys.
+            </summary>
+            <returns>
+                  array of strings
+            </returns>
+            <param name="presets">Switch choises between type of input and array select</param>
+        </helps>
+
+
+        <helps name="Less4Array">
+            <summary>
+Creates and prints a new array containing only those strings from the incoming array whose length is less 4
+            </summary>
+
+            <param name="arr1">Incoming array of strings.</param>
+
+        </helps>
+        <helps name="Main">
+            <summary>
+Entry point
+            </summary>
+        </helps>
+    </FHW>
+</docs>

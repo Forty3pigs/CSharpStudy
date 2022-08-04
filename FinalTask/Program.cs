@@ -1,11 +1,14 @@
 ﻿namespace Geekbrains
 {
+    ///<include file='info.xml' path='docs/FHW/helps[@name="FHW"]/*'/>
     static public class FHW
     {
+        ///<include file='info.xml' path='docs/FHW/helps[@name="Main"]/*'/>
         static public void Main()
         {
             Less4Array(Choise(false));
         }
+        ///<include file='info.xml' path='docs/FHW/helps[@name="Less4Array"]/*'/>
         public static void Less4Array(string[] arr1)
         {
             string[] arr2 = new string[arr1.Length];
@@ -22,6 +25,7 @@
             Console.WriteLine();
             Console.WriteLine($"В результате получился массив: [ {string.Join(", ", arr2)} ]");
         }
+        ///<include file='info.xml' path='docs/FHW/helps[@name="Choise"]/*'/>
         public static string[] Choise(bool presets)
 
         {
